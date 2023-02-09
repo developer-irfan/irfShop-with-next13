@@ -9,3 +9,13 @@ html {
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* custom css */
+.headerBg {
+  background-image: url("../public/assets/images/header.jpg");
+}
+.relative {
+  position: relative;
+  transition: max-width 5s ease-in-out;
+  overflow: hidden;
+}

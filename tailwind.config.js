@@ -2,7 +2,11 @@
 module.exports = {
   content: ["./app/**/*.{js,ts,jsx,tsx}", "./components/**/*.{js,ts,jsx,tsx}"],
   theme: {
-    extend: {},
+    extend: {
+      backgroundImage: {
+        headerBg: "url('./public/assets/images/logo.png')",
+      },
+    },
   },
   plugins: [],
 };

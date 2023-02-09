@@ -1,9 +1,15 @@
-import Image from "next/image";
-import { Inter } from "@next/font/google";
-import styles from "./page.module.css";
-
-const inter = Inter({ subsets: ["latin"] });
+import Header from "@/components/HomePageComp/Header";
+import Products from "@/components/HomePageComp/Products/Products";
+import OurServices from "@/components/HomePageComp/ServicesComp/OurServices";
+import Testimonials from "@/components/HomePageComp/Testimonials/Testimonials";
 
 export default function Home() {
-  return <h2 className="text-red-700">Home Page!!</h2>;
+  return (
+    <>
+      <Header />
+      <OurServices />
+      <Products />
+      <Testimonials />
+    </>
+  );
 }
