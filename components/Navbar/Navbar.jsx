@@ -55,7 +55,7 @@ function Navbar() {
         />
 
         <button className="px-4 py-2 my-3 text-white  bg-orange-600 text-[13px]">
-          Get a Qoute
+          Create Account
         </button>
       </div>
       <div className="content md:hidden">
