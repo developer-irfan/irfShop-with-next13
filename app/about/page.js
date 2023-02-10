@@ -1,12 +1,15 @@
 "use client";
-// import { useRouter } from "next/navigation";
+
+import BusinessSection from "@/components/AboutPageComp/BusinessSection";
+import Header from "@/components/HomePageComp/Header";
 
 const AboutPage = () => {
-  // const router = useRouter();
-
-  // console.log(router);
-
-  return <h2>About Page!!</h2>;
+  return (
+    <>
+      <Header />
+      <BusinessSection />
+    </>
+  );
 };
 
 export default AboutPage;

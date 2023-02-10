@@ -7,8 +7,6 @@ function Header() {
   // const { asPath, pathname } = useRouter();
   const pathname = usePathname();
 
-  console.log(pathname);
-
   //title
   const title =
     pathname === "/" ? "The Classic - Collection Shop House" : "About Us";

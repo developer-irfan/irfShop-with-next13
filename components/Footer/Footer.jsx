@@ -58,7 +58,7 @@ function Footer() {
           </div>
         </div>
         <h2 className="text-[18px]">Subscribe Now</h2>
-        <input type="text" className="border-[1px] border-black py-1" />
+        <input type="text" className="border-[1px] border-black py-2 px-2" />
         <br />
         <button className="addtocart px-8 py-2 text-white  bg-orange-600 text-[15px]">
           Subscribe

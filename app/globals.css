@@ -19,3 +19,11 @@ html {
   transition: max-width 5s ease-in-out;
   overflow: hidden;
 }
+.contact-container {
+  background-image: url("https://mdbootstrap.com/img/new/textures/full/284.jpg");
+  background-position: 50%;
+}
+.contact-wrapper {
+  background: hsla(0, 0%, 100%, 0.8);
+  backdrop-filter: blur(30px);
+}
