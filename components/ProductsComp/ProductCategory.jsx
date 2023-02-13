@@ -1,6 +1,10 @@
 import { BookIcon, LaptopIcon, StarIcon, WatchIcon } from "../Icons/Icons";
+import Link from "next/link";
+import { useSelector } from "react-redux";
 
 const ProductCategory = () => {
+  const hasLogin = useSelector((state) => state.adminLoginReducer);
+
   return (
     <div class="flex flex-wrap items-center  overflow-x-auto overflow-y-hidden py-10 justify-center   bg-white text-gray-600">
       <a
@@ -35,6 +39,13 @@ const ProductCategory = () => {
         <WatchIcon />
         <span>Consectetur</span>
       </a>
+      {hasLogin && (
+        <div>
+          <Link href="#" className="text-right underline">
+            <h4>Add New Product</h4>
+          </Link>
+        </div>
+      )}
     </div>
   );
 };

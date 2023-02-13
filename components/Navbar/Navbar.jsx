@@ -1,13 +1,30 @@
 "use client";
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
 import logo from "../../public/assets/images/logo.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
+import { useSelector, useDispatch } from "react-redux";
+import { userLogout } from "@/redux/Actions/Actions";
 
 function Navbar() {
+  const dispatch = useDispatch();
+
   const [isSearchBarOpen, setIsSearchBarOpen] = useState(false);
+
+  const router = useRouter();
+
+  const hasLogin = useSelector((state) => state.loginReducer);
+
+  const handleNavigate = () => {
+    router.push("/registration");
+  };
+
+  const handleLogout = () => {
+    dispatch(userLogout());
+  };
 
   //return
   return (
@@ -28,15 +45,22 @@ function Navbar() {
           <Link href="/about">
             <li>About</li>
           </Link>
-          <Link href="/products">
-            <li>Products</li>
-          </Link>
+          {hasLogin && (
+            <Link href="/products">
+              <li>Products</li>
+            </Link>
+          )}
           <Link href="/contact">
             <li>Contact</li>
           </Link>
           <Link href="/login">
             <li>Login</li>
           </Link>
+          {hasLogin && (
+            <Link href="/">
+              <li onClick={handleLogout}>Logout</li>
+            </Link>
+          )}
         </ul>
         {isSearchBarOpen && (
           <div className="">
@@ -54,7 +78,10 @@ function Navbar() {
           onClick={() => setIsSearchBarOpen(!isSearchBarOpen)}
         />
 
-        <button className="px-4 py-2 my-3 text-white  bg-orange-600 text-[13px]">
+        <button
+          className="px-4 py-2 my-3 text-white  bg-orange-600 text-[13px]"
+          onClick={handleNavigate}
+        >
           Create Account
         </button>
       </div>
