@@ -18,6 +18,8 @@ function Navbar() {
 
   const hasLogin = useSelector((state) => state.loginReducer);
 
+  const adminHasLogin = useSelector((state) => state.adminLoginReducer);
+
   const handleNavigate = () => {
     router.push("/registration");
   };
@@ -45,11 +47,12 @@ function Navbar() {
           <Link href="/about">
             <li>About</li>
           </Link>
-          {hasLogin && (
-            <Link href="/products">
-              <li>Products</li>
-            </Link>
-          )}
+          {hasLogin ||
+            (adminHasLogin && (
+              <Link href="/products">
+                <li>Products</li>
+              </Link>
+            ))}
           <Link href="/contact">
             <li>Contact</li>
           </Link>

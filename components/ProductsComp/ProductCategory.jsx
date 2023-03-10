@@ -41,7 +41,7 @@ const ProductCategory = () => {
       </a>
       {hasLogin && (
         <div>
-          <Link href="#" className="text-right underline">
+          <Link href="/add-new-products" className="text-right underline">
             <h4>Add New Product</h4>
           </Link>
         </div>

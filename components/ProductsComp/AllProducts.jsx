@@ -28,6 +28,7 @@ const AllProducts = () => {
               return (
                 <AllProductItem
                   key={index}
+                  id={product.id}
                   img={product.img}
                   title={product.title}
                   place={product.place}

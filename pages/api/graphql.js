@@ -3,6 +3,7 @@ import { ApolloServerPluginLandingPageGraphQLPlayground } from "apollo-server-co
 const products = require("../../data/products.json");
 const typeDefs = gql`
   type Product {
+    id: ID!
     img: String!
     title: String!
     place: String!
@@ -12,11 +13,32 @@ const typeDefs = gql`
   type Query {
     products: [Product]!
   }
+
+  type Mutation {
+    addProduct(
+      img: String!
+      title: String!
+      place: String!
+      price: String!
+    ): Product
+  }
 `;
 
 const resolvers = {
   Query: {
     products: () => products,
+  },
+  Mutation: {
+    addProduct: (parent, args) => {
+      const newProduct = {
+        img: args.img,
+        title: args.title,
+        place: args.place,
+        price: args.price,
+      };
+      products.push(newProduct);
+      return newProduct;
+    },
   },
 };
 

@@ -1,11 +1,12 @@
+import Link from "next/link";
 import { CartIcon } from "../Icons/Icons";
 
 const AllProductItem = (props) => {
-  const { img, title, place, price } = props;
+  const { img, title, place, price, id } = props;
 
   return (
     <article class="rounded-xl bg-white p-3 shadow-lg hover:shadow-xl hover:transform hover:scale-105 duration-300 ">
-      <a href="#">
+      <Link href={`/${id}`}>
         <div class="relative flex items-end overflow-hidden rounded-xl">
           <img src={img} alt="Hotel Photo" />
           <div class="flex items-center space-x-1.5 rounded-lg bg-blue-500 px-4 py-1.5 text-white duration-100 hover:bg-blue-600">
@@ -29,7 +30,7 @@ const AllProductItem = (props) => {
             </div>
           </div>
         </div>
-      </a>
+      </Link>
     </article>
   );
 };
